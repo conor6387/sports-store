@@ -1,4 +1,4 @@
-document.body.onload = loadCustomers;
+document.body.onload = loadAllCustomers;
 
 function populateEquipmentList(customersData) 
 {
@@ -27,12 +27,30 @@ function populateEquipmentList(customersData)
 	}
 }
 
-function createCustomerDivs(customersData) 
+function clearCustomerDivs() 
+{
+	const customersInfoDiv = document.getElementById("customersInfo");
+	while (customersInfoDiv.firstChild) {
+		customersInfoDiv.removeChild(customersInfoDiv.firstChild);
+	}
+}
+
+function createCustomerDivs(customersData, equipmentFilter = null) 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
 
 	for (const customer of customersData.customers) 
 	{
+		if (equipmentFilter) 
+		{
+			if (!customer.purchases.some(function (purchase) {
+				return purchase.equipment === equipmentFilter
+			})) 
+			{
+				continue;
+			}
+		}
+
 		const customerList = document.createElement("ul");
 
 		const customerName = document.createTextNode("Name: " + customer.firstName + " " + customer.lastName);
@@ -56,10 +74,28 @@ function createCustomerDivs(customersData)
 	}
 }
 
-async function loadCustomers() {
+async function equipmentFilterSelectionChange(event)
+{
+	var selectElement = event.target;
+    var value = selectElement.value;
+
+	const customersData = await retrieveCustomerData();
+
+	clearCustomerDivs();
+	createCustomerDivs(customersData, value)
+}
+
+async function loadAllCustomers() 
+{
+	const customersData = await retrieveCustomerData();
+	populateEquipmentList(customersData);
+	createCustomerDivs(customersData);
+}
+
+async function retrieveCustomerData()
+{
 	const request = new Request("customers.json");
 	const response = await fetch(request);
   	const customersData = await response.json();
-	populateEquipmentList(customersData);
-	createCustomerDivs(customersData);
+	return customersData;
 }
