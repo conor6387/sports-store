@@ -35,46 +35,56 @@ function clearCustomerDivs()
 	}
 }
 
+function doesCustomerMatchFilterValues(customer, equipmentFilter, nameFilter, memberFilter) 
+{
+	if (equipmentFilter) 
+	{
+		if (!customer.purchases.some(function (purchase) {
+			return purchase.equipment === equipmentFilter
+		})) 
+		{
+			return false;
+		}
+	}
+
+	if (nameFilter) 
+	{
+		const name = (`${customer.firstName} ${customer.lastName}`).toLowerCase();
+
+		if (!name.includes(nameFilter.toLowerCase())) 
+		{
+			return false;
+		}
+	}
+
+	if (memberFilter) 
+	{
+		if (customer.loyaltyMember != memberFilter) 
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
 function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = null, memberFilter = null) 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
 
 	for (const customer of customersData.customers) 
 	{
-		if (equipmentFilter) 
+		if (!doesCustomerMatchFilterValues(customer, equipmentFilter, nameFilter, memberFilter)) 
 		{
-			if (!customer.purchases.some(function (purchase) {
-				return purchase.equipment === equipmentFilter
-			})) 
-			{
-				continue;
-			}
-		}
-
-		if (nameFilter) 
-		{
-			const name = (customer.firstName + " " + customer.lastName).toLowerCase();
-
-			if (!name.includes(nameFilter.toLowerCase())) 
-			{
-				continue;
-			}
-		}
-
-		if (memberFilter) 
-		{
-			if (customer.loyaltyMember != memberFilter) 
-			{
-				continue;
-			}
+			continue;
 		}
 
 		const customerList = document.createElement("ul");
 		customerList.id = "customerList";
 
-		const customerName = document.createTextNode("Name: " + customer.firstName + " " + customer.lastName);
-		const customerMemberStatus = document.createTextNode("Loyalty member: " + (customer.loyaltyMember ? "Yes" : "No"));
-		const customerPurchaseCount = document.createTextNode("Number of purchases: " + customer.purchases.length);
+		const customerName = document.createTextNode(`Name: ${customer.firstName} ${customer.lastName}`);
+		const customerMemberStatus = document.createTextNode(`Loyalty member: ${customer.loyaltyMember ? "Yes" : "No"}`);
+		const customerPurchaseCount = document.createTextNode(`Number of purchases: ${customer.purchases.length}`);
 
 		const customerNameListItem = document.createElement("li");
 		customerNameListItem.id = "customerListItem";
@@ -125,32 +135,21 @@ async function loadCustomerDialogData(Id)
 
 	const customerDialogInfoDiv = document.getElementById("customerDialogInfoDiv");
 
-	const customerId = document.createTextNode("Id: " + Id);
-	const customerFirstName = document.createTextNode("First name: " + customer.firstName);
-	const customerLastName = document.createTextNode("Last name: " + customer.lastName);
-	const customerEmail = document.createTextNode("Email: " + customer.email);
-	const customerMemberStatus = document.createTextNode("Loyalty member: " + (customer.loyaltyMember ? "Yes" : "No"));
+	const customerElementsList = [];
 
-	const customerIdElement = document.createElement("p");
-	customerIdElement.appendChild(customerId);
+	customerElementsList.push(document.createTextNode(`Id: ${Id}`));
+	customerElementsList.push(document.createTextNode(`First name: ${customer.firstName}`));
+	customerElementsList.push(document.createTextNode(`Last name: ${customer.lastName}`));
+	customerElementsList.push(document.createTextNode(`Email: ${customer.email}`));
+	customerElementsList.push(document.createTextNode(`Loyalty member: ${(customer.loyaltyMember ? "Yes" : "No")}`));
 
-	const customerFirstNameElement = document.createElement("p");
-	customerFirstNameElement.appendChild(customerFirstName);
+	for (const text of customerElementsList) 
+	{
+		const element = document.createElement("p");
+		element.appendChild(text);
 
-	const customerLastNameElement = document.createElement("p");
-	customerLastNameElement.appendChild(customerLastName);
-
-	const customerEmailElement = document.createElement("p");
-	customerEmailElement.appendChild(customerEmail);
-
-	const customerMemberStatusElement = document.createElement("p");
-	customerMemberStatusElement.appendChild(customerMemberStatus);
-
-	customerDialogInfoDiv.appendChild(customerIdElement);
-	customerDialogInfoDiv.appendChild(customerFirstNameElement);
-	customerDialogInfoDiv.appendChild(customerLastNameElement);
-	customerDialogInfoDiv.appendChild(customerEmailElement);
-	customerDialogInfoDiv.appendChild(customerMemberStatusElement);
+		customerDialogInfoDiv.appendChild(element);
+	}
 
 	const purchaseList = document.createElement("ul");
 	var totalSpent = 0;
@@ -168,7 +167,6 @@ async function loadCustomerDialogData(Id)
 	}
 
 	const customerPurchases = document.createTextNode("Purchases:");
-
 	const customerPurchasesElement = document.createElement("p");
 	customerPurchasesElement.appendChild(customerPurchases);
 
@@ -185,7 +183,7 @@ async function loadCustomerDialogData(Id)
 	customerDialogInfoDiv.appendChild(customerSpendElement);
 }
 
-async function applyFilterSelections()
+async function updateFilterSelections()
 {
 	var equipmentValue = document.getElementById("equipmentFilter").value;
 	var nameValue = document.getElementById("customerNameFilter").value;

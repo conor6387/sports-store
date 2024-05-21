@@ -12,15 +12,15 @@
     </div>
     <div class="searchFilterDiv">
       <div class="searchFilter">
-        <select name="equipmentFilter" id="equipmentFilter" onchange="applyFilterSelections()">
+        <select name="equipmentFilter" id="equipmentFilter" onchange="updateFilterSelections()">
           <option value="">--Filter by equipment purchased--</option>
         </select>
       </div>
       <div class="searchFilter">
-        <input name="customerNameFilter" type="search" id="customerNameFilter" placeholder="Search customer name" onchange="applyFilterSelections()"></input>
+        <input name="customerNameFilter" type="search" id="customerNameFilter" placeholder="Search customer name" onchange="updateFilterSelections()"></input>
       </div>
       <div class="searchFilter">
-        <input name="memberFilter" type="checkbox" id="memberFilter" onchange="applyFilterSelections()" />
+        <input name="memberFilter" type="checkbox" id="memberFilter" onchange="updateFilterSelections()" />
         Loyalty member
       </div>
     </div>
