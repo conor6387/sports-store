@@ -35,7 +35,7 @@ function clearCustomerDivs()
 	}
 }
 
-function createCustomerDivs(customersData, equipmentFilter = null, memberFilter = null) 
+function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = null, memberFilter = null) 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
 
@@ -51,7 +51,15 @@ function createCustomerDivs(customersData, equipmentFilter = null, memberFilter 
 			}
 		}
 
-		console.log(memberFilter);
+		if (nameFilter) 
+		{
+			const name = (customer.firstName + " " + customer.lastName).toLowerCase();
+
+			if (!name.includes(nameFilter.toLowerCase())) 
+			{
+				continue;
+			}
+		}
 
 		if (memberFilter) 
 		{
@@ -87,12 +95,13 @@ function createCustomerDivs(customersData, equipmentFilter = null, memberFilter 
 async function applyFilterSelections()
 {
 	var equipmentValue = document.getElementById("equipmentFilter").value;
+	var nameValue = document.getElementById("customerNameFilter").value;
 	var memberValue = document.getElementById("memberFilter").checked;
 
 	const customersData = await retrieveCustomerData();
 
 	clearCustomerDivs();
-	createCustomerDivs(customersData, equipmentValue, memberValue)
+	createCustomerDivs(customersData, equipmentValue, nameValue, memberValue)
 }
 
 async function loadAllCustomers() 
