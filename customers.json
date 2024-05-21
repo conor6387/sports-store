@@ -24,8 +24,8 @@
     {
       "id": "1",
       "firstName": "Sarah",
-      "lastName": "Jones",
-      "email": "SarahJones@gmail.com",
+      "lastName": "Smith",
+      "email": "SarahSmith@gmail.com",
       "loyaltyMember": true,
       "purchases": [
         {

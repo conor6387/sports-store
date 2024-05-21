@@ -11,16 +11,16 @@
       <h1>Customers</h1>
     </div>
     <div class="searchFilterDiv">
-      <div class="searchFilter" id="equipmentFilter">
-        <select name="equipmentSearch" id="equipmentSearch" onchange="equipmentFilterSelectionChange(event)">
+      <div class="searchFilter">
+        <select name="equipmentFilter" id="equipmentFilter" onchange="applyFilterSelections()">
           <option value="">--Filter by equipment purchased--</option>
         </select>
       </div>
-      <div class="searchFilter" id="customerNameFilter">
-        <input type="search" id="customerSearch" placeholder="Search customer name"></input>
+      <div class="searchFilter">
+        <input name="customerNameFilter" type="search" id="customerNameFilter" placeholder="Search customer name"></input>
       </div>
-      <div class="searchFilter" id="memberFilter">
-        <input type="checkbox" id="exact-only" />
+      <div class="searchFilter">
+        <input name="memberFilter" type="checkbox" id="memberFilter" onchange="applyFilterSelections()" />
         Loyalty member
       </div>
     </div>

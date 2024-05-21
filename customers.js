@@ -2,7 +2,7 @@ document.body.onload = loadAllCustomers;
 
 function populateEquipmentList(customersData) 
 {
-	const equipmentDropdown = document.getElementById("equipmentSearch");
+	const equipmentDropdown = document.getElementById("equipmentFilter");
 
 	const equipmentArray = [];
 
@@ -35,7 +35,7 @@ function clearCustomerDivs()
 	}
 }
 
-function createCustomerDivs(customersData, equipmentFilter = null) 
+function createCustomerDivs(customersData, equipmentFilter = null, memberFilter = null) 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
 
@@ -46,6 +46,16 @@ function createCustomerDivs(customersData, equipmentFilter = null)
 			if (!customer.purchases.some(function (purchase) {
 				return purchase.equipment === equipmentFilter
 			})) 
+			{
+				continue;
+			}
+		}
+
+		console.log(memberFilter);
+
+		if (memberFilter) 
+		{
+			if (customer.loyaltyMember != memberFilter) 
 			{
 				continue;
 			}
@@ -74,15 +84,15 @@ function createCustomerDivs(customersData, equipmentFilter = null)
 	}
 }
 
-async function equipmentFilterSelectionChange(event)
+async function applyFilterSelections()
 {
-	var selectElement = event.target;
-    var value = selectElement.value;
+	var equipmentValue = document.getElementById("equipmentFilter").value;
+	var memberValue = document.getElementById("memberFilter").checked;
 
 	const customersData = await retrieveCustomerData();
 
 	clearCustomerDivs();
-	createCustomerDivs(customersData, value)
+	createCustomerDivs(customersData, equipmentValue, memberValue)
 }
 
 async function loadAllCustomers() 
