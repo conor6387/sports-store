@@ -1,5 +1,32 @@
 document.body.onload = loadCustomers;
 
+function populateEquipmentList(customersData) 
+{
+	const equipmentDropdown = document.getElementById("equipmentSearch");
+
+	const equipmentArray = [];
+
+	for (const customer of customersData.customers) 
+	{
+		for (const purchase of customer.purchases)
+		{
+			if (!equipmentArray.includes(purchase.equipment))
+			{
+				equipmentArray.push(purchase.equipment)
+			}
+		}
+	}
+
+	for (const equipment of equipmentArray) 
+	{
+		const equipmentOption = document.createElement("option");
+
+		equipmentOption.innerText = equipment;
+
+		equipmentDropdown.appendChild(equipmentOption)
+	}
+}
+
 function createCustomerDivs(customersData) 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
@@ -33,5 +60,6 @@ async function loadCustomers() {
 	const request = new Request("customers.json");
 	const response = await fetch(request);
   	const customersData = await response.json();
+	populateEquipmentList(customersData);
 	createCustomerDivs(customersData);
 }

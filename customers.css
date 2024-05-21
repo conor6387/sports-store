@@ -1,0 +1,44 @@
+
+body { 
+	background-color: lightgrey;
+}
+
+.pageHeader {
+	width: 97%;
+	text-align: left;
+	padding-left: 3%;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.searchFilterDiv {
+	width: 100%;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.searchFilter {
+	width: 33%;
+	background-color: white;
+	display: inline-block;
+	text-align: center;
+}
+
+#customersInfo {
+	width: 20%;
+	display: block;
+}
+
+ul {
+	background-color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	list-style: none;
+	text-align: center;
+}
+
+li {
+	padding: 10px;
+	font-size: large;
+}

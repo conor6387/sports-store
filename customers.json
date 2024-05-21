@@ -62,6 +62,12 @@
       "loyaltyMember": true,
       "purchases": [
         {
+          "equipment": "football",
+          "cost": "34.99",
+          "month": "12",
+          "year": "2023"
+        },
+        {
           "equipment": "ping pong table",
           "cost": "249.99",
           "month": "12",

@@ -3,11 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <title>Customers</title>
+    <link rel="stylesheet" href="customers.css" />
   </head>
   <body>
     <script src="customers.js"></script>
     <div class="pageHeader">
       <h1>Customers</h1>
+    </div>
+    <div class="searchFilterDiv">
+      <div class="searchFilter" id="equipmentFilter">
+        <select name="equipmentSearch" id="equipmentSearch">
+          <option value="">--Filter by equipment purchased--</option>
+        </select>
+      </div>
+      <div class="searchFilter" id="customerNameFilter">
+        <input type="search" id="customerSearch" placeholder="Search customer name"></input>
+      </div>
+      <div class="searchFilter" id="memberFilter">
+        <input type="checkbox" id="exact-only" />
+        Loyalty member
+      </div>
     </div>
     <div id="customersInfo"></div>
   </body>
