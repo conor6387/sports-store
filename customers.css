@@ -30,7 +30,7 @@ body {
 	display: block;
 }
 
-ul {
+#customerList {
 	background-color: white;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -38,7 +38,7 @@ ul {
 	text-align: center;
 }
 
-li {
+#customerListItem {
 	padding: 10px;
 	font-size: large;
 }

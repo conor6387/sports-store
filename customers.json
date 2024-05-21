@@ -8,13 +8,13 @@
       "loyaltyMember": false,
       "purchases": [
         {
-          "equipment": "basketball",
+          "equipment": "Basketball",
           "cost": "29.99",
           "month": "11",
           "year": "2023"
         },
         {
-          "equipment": "running shoes",
+          "equipment": "Running shoes",
           "cost": "199.99",
           "month": "04",
           "year": "2024"
@@ -29,25 +29,25 @@
       "loyaltyMember": true,
       "purchases": [
         {
-          "equipment": "frisbee",
+          "equipment": "Frisbee",
           "cost": "9.99",
           "month": "11",
           "year": "2023"
         },
         {
-          "equipment": "tennis racquet",
+          "equipment": "Tennis racquet",
           "cost": "149.99",
           "month": "12",
           "year": "2023"
         },
         {
-          "equipment": "polo shirt",
+          "equipment": "Polo shirt",
           "cost": "49.99",
           "month": "2",
           "year": "2024"
         },
         {
-          "equipment": "water bottle",
+          "equipment": "Water bottle",
           "cost": "14.99",
           "month": "2",
           "year": "2024"
@@ -62,25 +62,25 @@
       "loyaltyMember": true,
       "purchases": [
         {
-          "equipment": "football",
+          "equipment": "Football",
           "cost": "34.99",
           "month": "12",
           "year": "2023"
         },
         {
-          "equipment": "ping pong table",
+          "equipment": "Ping pong table",
           "cost": "249.99",
           "month": "12",
           "year": "2023"
         },
         {
-          "equipment": "boxing gloves",
+          "equipment": "Boxing gloves",
           "cost": "129.99",
           "month": "03",
           "year": "2024"
         },
         {
-          "equipment": "skipping rope",
+          "equipment": "Skipping rope",
           "cost": "4.99",
           "month": "5",
           "year": "2024"
