@@ -110,9 +110,16 @@ function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = 
 
 function clearCustomerDialog() 
 {
-	const customersDialogDiv = document.getElementById("customerDialogInfoDiv");
-	while (customersDialogDiv.firstChild) {
-		customersDialogDiv.removeChild(customersDialogDiv.firstChild);
+	const customerElementsList = customerDialogInfoDiv.querySelectorAll("#customerDialogTextItem");
+
+	for (let i = 0; i < customerElementsList.length; i++)
+	{
+		customerElementsList[i].textContent = "";
+	}
+
+	const customersDialogPurchaseList = document.getElementById("customerDialogPurchaseList");
+	while (customersDialogPurchaseList.firstChild) {
+		customersDialogPurchaseList.removeChild(customersDialogPurchaseList.firstChild);
 	}
 }
 
@@ -126,23 +133,17 @@ async function loadCustomerDialogData(Id)
 
 	const customerDialogInfoDiv = document.getElementById("customerDialogInfoDiv");
 
-	const customerElementsList = [];
+	const customerElementsList = customerDialogInfoDiv.querySelectorAll("#customerDialogTextItem");
 
-	customerElementsList.push(document.createTextNode(`Id: ${Id}`));
-	customerElementsList.push(document.createTextNode(`First name: ${customer.firstName}`));
-	customerElementsList.push(document.createTextNode(`Last name: ${customer.lastName}`));
-	customerElementsList.push(document.createTextNode(`Email: ${customer.email}`));
-	customerElementsList.push(document.createTextNode(`Loyalty member: ${(customer.loyaltyMember ? "Yes" : "No")}`));
+	customerElementsList[0].textContent = `Id: ${Id}`;
+	customerElementsList[1].textContent = `First name: ${customer.firstName}`;
+	customerElementsList[2].textContent = `Last name: ${customer.lastName}`;
+	customerElementsList[3].textContent = `Email: ${customer.email}`;
+	customerElementsList[4].textContent = `Loyalty member: ${(customer.loyaltyMember ? "Yes" : "No")}`;
+	customerElementsList[5].textContent = "Purchases:";
 
-	for (const text of customerElementsList) 
-	{
-		const element = document.createElement("p");
-		element.appendChild(text);
+	const purchaseList = document.getElementById("customerDialogPurchaseList");
 
-		customerDialogInfoDiv.appendChild(element);
-	}
-
-	const purchaseList = document.createElement("ul");
 	var totalSpent = 0;
 
 	for (const purchase of customer.purchases) 
@@ -157,21 +158,8 @@ async function loadCustomerDialogData(Id)
 		purchaseList.appendChild(purchaseListItem);
 	}
 
-	const customerPurchases = document.createTextNode("Purchases:");
-	const customerPurchasesElement = document.createElement("p");
-	customerPurchasesElement.appendChild(customerPurchases);
-
-	customerDialogInfoDiv.appendChild(customerPurchasesElement);
-	customerDialogInfoDiv.appendChild(purchaseList);
-
 	totalSpent = totalSpent.toFixed(2);
-
-	const customerSpend = document.createTextNode("Total spent: $" + totalSpent);
-
-	const customerSpendElement = document.createElement("p");
-	customerSpendElement.appendChild(customerSpend);
-
-	customerDialogInfoDiv.appendChild(customerSpendElement);
+	customerElementsList[6].textContent = `Total spent: $${totalSpent}`;
 }
 
 async function updateFilterSelections()
