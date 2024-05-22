@@ -21,7 +21,7 @@ function populateEquipmentList(customersData)
 	{
 		const equipmentOption = document.createElement("option");
 
-		equipmentOption.innerText = equipment;
+		equipmentOption.textContent = equipment;
 
 		equipmentDropdown.appendChild(equipmentOption)
 	}
@@ -30,8 +30,12 @@ function populateEquipmentList(customersData)
 function clearCustomerDivs() 
 {
 	const customersInfoDiv = document.getElementById("customersInfo");
-	while (customersInfoDiv.firstChild) {
-		customersInfoDiv.removeChild(customersInfoDiv.firstChild);
+	while (customersInfoDiv.lastChild) {
+		if (customersInfoDiv.lastChild.nodeName == "TEMPLATE") 
+		{ 
+			break; 
+		}
+		customersInfoDiv.removeChild(customersInfoDiv.lastChild);
 	}
 }
 
@@ -79,19 +83,20 @@ function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = 
 			continue;
 		}
 
-		const customerList = document.createElement("ul");
-		customerList.id = "customerList";
+		const listTemplate = document.querySelector("#customerListTemplate");
 
-		const customerName = document.createTextNode(`Name: ${customer.firstName} ${customer.lastName}`);
-		const customerMemberStatus = document.createTextNode(`Loyalty member: ${customer.loyaltyMember ? "Yes" : "No"}`);
-		const customerPurchaseCount = document.createTextNode(`Number of purchases: ${customer.purchases.length}`);
+		const templateClone = listTemplate.content.cloneNode(true);
 
-		const customerNameListItem = document.createElement("li");
-		customerNameListItem.id = "customerListItem";
-		customerNameListItem.appendChild(customerName);
+		const listItems = templateClone.querySelectorAll("#customerListItem");
+
+		listItems[0].textContent = `Name: ${customer.firstName} ${customer.lastName}`;
+		listItems[1].textContent = `Loyalty member: ${customer.loyaltyMember ? "Yes" : "No"}`;
+		listItems[2].textContent = `Number of purchases: ${customer.purchases.length}`;
+
+		customersInfoDiv.appendChild(templateClone);
 
 		const customerDialog = document.getElementById("customerDialog");
-		customerNameListItem.addEventListener("click", () => {
+		listItems[0].addEventListener("click", () => {
 			loadCustomerDialogData(customer.id);
 			customerDialog.showModal();
 		});
@@ -100,20 +105,6 @@ function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = 
 		closeButton.addEventListener("click", () => {
 			customerDialog.close();
 		});
-
-		const customerMemberStatusListItem = document.createElement("li");
-		customerMemberStatusListItem.id = "customerListItem";
-		customerMemberStatusListItem.appendChild(customerMemberStatus);
-
-		const customerPurchaseCountListItem = document.createElement("li");
-		customerPurchaseCountListItem.id = "customerListItem";
-		customerPurchaseCountListItem.appendChild(customerPurchaseCount);
-
-		customerList.appendChild(customerNameListItem);
-		customerList.appendChild(customerMemberStatusListItem);
-		customerList.appendChild(customerPurchaseCountListItem);
-
-		customersInfoDiv.appendChild(customerList);
 	}
 }
 
