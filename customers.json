@@ -16,7 +16,7 @@
         {
           "equipment": "Running shoes",
           "cost": "199.99",
-          "month": "04",
+          "month": "4",
           "year": "2024"
         }
       ]
@@ -76,7 +76,7 @@
         {
           "equipment": "Boxing gloves",
           "cost": "129.99",
-          "month": "03",
+          "month": "3",
           "year": "2024"
         },
         {
@@ -92,6 +92,139 @@
       "firstName": "Midhat",
       "lastName": "Bahtijarevic",
       "email": "Midhat@hotmail.com",
+      "loyaltyMember": false,
+      "purchases": []
+    },
+    {
+      "id": "4",
+      "firstName": "Jeremy",
+      "lastName": "Allen",
+      "email": "JAllen@outlook.com",
+      "loyaltyMember": true,
+      "purchases": [
+        {
+          "equipment": "Running shoes",
+          "cost": "199.99",
+          "month": "12",
+          "year": "2023"
+        },
+        {
+          "equipment": "Skipping rope",
+          "cost": "4.99",
+          "month": "3",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "firstName": "Chris",
+      "lastName": "Hemsworth",
+      "email": "Thor@asgard.com",
+      "loyaltyMember": false,
+      "purchases": []
+    },
+    {
+      "id": "6",
+      "firstName": "Steph",
+      "lastName": "Curry",
+      "email": "stephencurry@gmail.com",
+      "loyaltyMember": true,
+      "purchases": [
+        {
+          "equipment": "Basketball",
+          "cost": "29.99",
+          "month": "12",
+          "year": "2023"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "firstName": "Pedro",
+      "lastName": "Pascal",
+      "email": "Pedro@hotmail.com",
+      "loyaltyMember": true,
+      "purchases": [
+        {
+          "equipment": "Polo shirt",
+          "cost": "49.99",
+          "month": "1",
+          "year": "2024"
+        },
+        {
+          "equipment": "Water bottle",
+          "cost": "14.99",
+          "month": "2",
+          "year": "2024"
+        },
+        {
+          "equipment": "Boxing gloves",
+          "cost": "129.99",
+          "month": "5",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "firstName": "Cody",
+      "lastName": "Liesch",
+      "email": "CodyLiesch@gmail.com",
+      "loyaltyMember": true,
+      "purchases": [
+        {
+          "equipment": "Football",
+          "cost": "34.99",
+          "month": "5",
+          "year": "2024"
+        },
+        {
+          "equipment": "Polo shirt",
+          "cost": "49.99",
+          "month": "5",
+          "year": "2024"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "firstName": "Bede",
+      "lastName": "Fitzsimmons",
+      "email": "BedeF@hotmail.com",
+      "loyaltyMember": true,
+      "purchases": [
+        {
+          "equipment": "Ping pong table",
+          "cost": "249.99",
+          "month": "11",
+          "year": "2023"
+        },
+        {
+          "equipment": "Boxing gloves",
+          "cost": "129.99",
+          "month": "11",
+          "year": "2023"
+        },
+        {
+          "equipment": "Frisbee",
+          "cost": "9.99",
+          "month": "12",
+          "year": "2023"
+        },
+        {
+          "equipment": "Tennis racquet",
+          "cost": "149.99",
+          "month": "12",
+          "year": "2023"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "firstName": "Cooper",
+      "lastName": "Richmond",
+      "email": "Coop@outlook.com",
       "loyaltyMember": false,
       "purchases": []
     }

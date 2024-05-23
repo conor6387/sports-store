@@ -46,7 +46,7 @@ h1 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1%;
-	row-gap: 3%;
+	row-gap: 20px;
 }
 
 #customerList {
