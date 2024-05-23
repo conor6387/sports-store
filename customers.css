@@ -16,10 +16,24 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	background-color: orangered;
+	display: inline-flex;
+  	align-items: center;
+}
+
+.navLink {
+	color: white;
+	margin-right: 3%;
+	float: right;
+	text-decoration: none;
+}
+
+#activePage {
+	font-weight: bold;
 }
 
 h1 {
 	color: white;
+	padding-right: 65%;
 }
 
 .searchFilterDiv {
@@ -70,6 +84,7 @@ h1 {
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
+	border-radius: 5px;
 }
 
 #customerDialogInfoDiv {

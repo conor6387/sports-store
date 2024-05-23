@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Customers</title>
+    <link rel="stylesheet" href="summary.css" />
+  </head>
+  <body>
+    <script src="summary.js"></script>
+    <div class="pageHeader">
+      <h1>Sports Store</h1>
+      <a class="navLink" href="customers.html">Customers</a>
+      <a class="navLink" id="activePage" href="summary.html">Summary</a>
+    </div> 
+	<div class="summaryBody">
+		<p>Monthly sales totals:</p>
+		<table class="monthlySalesTable">
+			<thead>
+				<tr>
+					<th scope="col">Month</th>
+					<th scope="col">Sales ($)</th>
+					<th scope="col">Monthly Change</th>
+				</tr>
+			</thead>
+			<tbody id="monthlySalesTableContent">
+				<template id="monthlySalesTableRow">
+					<tr>
+						<td scope="row"></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</template>
+			</tbody>
+		  </table>
+		<p>Yearly sales totals:</p>
+	</div>
+  </body>
+</html>
