@@ -13,13 +13,13 @@
       <a class="navLink" id="activePage" href="summary.html">Summary</a>
     </div> 
 	<div class="summaryBody">
-		<p>Monthly sales totals:</p>
+		<h3>Monthly sales totals:</h3>
 		<table class="monthlySalesTable">
 			<thead>
 				<tr>
 					<th scope="col">Month</th>
 					<th scope="col">Sales ($)</th>
-					<th scope="col">Monthly Change</th>
+					<th scope="col">Monthly Change ($)</th>
 				</tr>
 			</thead>
 			<tbody id="monthlySalesTableContent">
@@ -32,7 +32,23 @@
 				</template>
 			</tbody>
 		  </table>
-		<p>Yearly sales totals:</p>
+		<h3>Yearly sales totals:</h3>
+		<table class="yearlySalesTable">
+			<thead>
+				<tr>
+					<th scope="col">Current Year ($)</th>
+					<th scope="col">Previous Year ($)</th>
+					<th scope="col">Difference ($)</th>
+				</tr>
+			</thead>
+			<tbody id="yearlySalesTableContent">
+				<tr>
+					<td scope="row"></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
   </body>
 </html>

@@ -7,6 +7,10 @@ async function loadSummaryData()
 	const customersData = await retrieveCustomerData();
 
 	var monthSalesDict = {};
+	var previousYearTotal = 0;
+	var currentYearTotal = 0;
+
+	const currentYear = new Date().getFullYear();
 
 	for (const customer of customersData.customers) 
 	{
@@ -22,6 +26,14 @@ async function loadSummaryData()
 			{
 				monthSalesDict[dateKey] = purchase.cost;
 			}
+
+			if (purchase.year == currentYear) {
+				currentYearTotal = (+currentYearTotal + +purchase.cost).toFixed(2);
+			}
+
+			if (purchase.year == currentYear - 1) {
+				previousYearTotal = (+previousYearTotal + +purchase.cost).toFixed(2);
+			}
 		}
 	}
 
@@ -33,7 +45,7 @@ async function loadSummaryData()
 		return new Date(a[0]) - new Date(b[0]);
 	});
 
-	monthlySalesTable = document.getElementById("monthlySalesTableContent");
+	const monthlySalesTable = document.getElementById("monthlySalesTableContent");
 
 	let previousMonth;
 
@@ -53,6 +65,14 @@ async function loadSummaryData()
 
 		previousMonth = date[1];
 	}
+
+	const yearlySalesTable = document.getElementById("yearlySalesTableContent");
+
+	const yearlyTableColumns = yearlySalesTable.querySelectorAll("td");
+
+	yearlyTableColumns[0].textContent = `${currentYearTotal}`;
+	yearlyTableColumns[1].textContent = `${previousYearTotal}`;
+	yearlyTableColumns[2].textContent = `${(currentYearTotal - previousYearTotal).toFixed(2)}`;
 }
 
 async function retrieveCustomerData()

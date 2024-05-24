@@ -36,18 +36,27 @@ h1 {
 	padding-right: 65%;
 }
 
+h3 {
+	padding-left: 32%;
+	padding-top: 2%;
+}
+
 .summaryBody {
 	width: 98%;
-	height: 85vh;
+	height: 88vh;
 	margin: auto;
 	background-color: white;
 	margin-top: 20px;
 }
 
-.monthlySalesTable {
+.monthlySalesTable, .yearlySalesTable {
 	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	margin: 2% auto;
 }
 
 th, td {
 	border: 1px solid black;
+	padding: 10px;
 }
