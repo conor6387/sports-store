@@ -1,4 +1,4 @@
-document.body.onload = loadAllCustomers;
+document.body.onload = loadAllCustomers();
 
 function populateEquipmentList(customersData) 
 {
@@ -12,7 +12,7 @@ function populateEquipmentList(customersData)
 		{
 			if (!equipmentArray.includes(purchase.equipment))
 			{
-				equipmentArray.push(purchase.equipment)
+				equipmentArray.push(purchase.equipment);
 			}
 		}
 	}
@@ -23,7 +23,7 @@ function populateEquipmentList(customersData)
 
 		equipmentOption.textContent = equipment;
 
-		equipmentDropdown.appendChild(equipmentOption)
+		equipmentDropdown.appendChild(equipmentOption);
 	}
 }
 
@@ -44,7 +44,7 @@ function doesCustomerMatchFilterValues(customer, equipmentFilter, nameFilter, me
 	if (equipmentFilter) 
 	{
 		if (!customer.purchases.some(function (purchase) {
-			return purchase.equipment === equipmentFilter
+			return purchase.equipment === equipmentFilter;
 		})) 
 		{
 			return false;
@@ -171,7 +171,7 @@ async function updateFilterSelections()
 	const customersData = await retrieveCustomerData();
 
 	clearCustomerDivs();
-	createCustomerDivs(customersData, equipmentValue, nameValue, memberValue)
+	createCustomerDivs(customersData, equipmentValue, nameValue, memberValue);
 }
 
 async function loadAllCustomers() 
