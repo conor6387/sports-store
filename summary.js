@@ -11,6 +11,7 @@ async function loadSummaryData()
 	var currentYearTotal = 0;
 
 	const currentYear = new Date().getFullYear();
+	const currentMonth = new Date().getMonth();
 
 	for (const customer of customersData.customers) 
 	{
@@ -57,9 +58,23 @@ async function loadSummaryData()
 
 		const rowColumns = templateClone.querySelectorAll("td");
 
+		if ((new Date(date[0])).getMonth() == currentMonth) 
+		{
+			for (column of rowColumns) 
+			{
+				column.className += "currentMonthHighlight"
+			}
+		}
+
 		rowColumns[0].textContent = `${month[(new Date(date[0])).getMonth()]} ${(new Date(date[0])).getFullYear()}`;
 		rowColumns[1].textContent = `${date[1]}`;
-		rowColumns[2].textContent = `${(+date[1] - +previousMonth).toFixed(2)}`;
+
+		const monthlyChange = (+date[1] - +previousMonth).toFixed(2);
+		const positiveChangeChar = monthlyChange >= 0 ? "+" : ""; 
+		rowColumns[2].textContent = `${positiveChangeChar}${monthlyChange}`;
+
+		const monthlyPercentChange = ((+date[1] / +previousMonth - 1)*100).toFixed(2);
+		rowColumns[3].textContent = `${positiveChangeChar}${monthlyPercentChange}`;
 
 		monthlySalesTable.appendChild(templateClone);
 
@@ -72,7 +87,13 @@ async function loadSummaryData()
 
 	yearlyTableColumns[0].textContent = `${currentYearTotal}`;
 	yearlyTableColumns[1].textContent = `${previousYearTotal}`;
-	yearlyTableColumns[2].textContent = `${(currentYearTotal - previousYearTotal).toFixed(2)}`;
+
+	const yearlyChange = (currentYearTotal - previousYearTotal).toFixed(2);
+	const positiveChangeChar = yearlyChange >= 0 ? "+" : "";
+	yearlyTableColumns[2].textContent = `${positiveChangeChar}${yearlyChange}`;
+
+	const yearlyPercentChange = ((currentYearTotal / previousYearTotal - 1)*100).toFixed(2);
+	yearlyTableColumns[3].textContent = `${positiveChangeChar}${yearlyPercentChange}`;
 }
 
 async function retrieveCustomerData()
