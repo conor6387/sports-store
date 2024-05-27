@@ -83,11 +83,11 @@ function createCustomerDivs(customersData, equipmentFilter = null, nameFilter = 
 			continue;
 		}
 
-		const listTemplate = document.querySelector("#customer-list-template");
+		const listTemplate = document.querySelector(".customer-list-template");
 
 		const templateClone = listTemplate.content.cloneNode(true);
 
-		const listItems = templateClone.querySelectorAll("#customer-list-item");
+		const listItems = templateClone.querySelectorAll(".customer-list-item");
 
 		listItems[0].textContent = `Name: ${customer.firstName} ${customer.lastName}`;
 		listItems[1].textContent = `Loyalty member: ${customer.loyaltyMember ? "Yes" : "No"}`;
@@ -133,7 +133,7 @@ async function loadCustomerDialogData(Id)
 
 	const customer = customersData.customers.find((customer) => customer.id == Id);
 
-	const customerElementsList = customerDialogInfoDiv.querySelectorAll("#customer-dialog-text-item");
+	const customerElementsList = customerDialogInfoDiv.querySelectorAll(".customer-dialog-text-item");
 
 	customerElementsList[0].textContent = `Id: ${Id}`;
 	customerElementsList[1].textContent = `First name: ${customer.firstName}`;

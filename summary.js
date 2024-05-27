@@ -10,7 +10,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 
 	for (const date of monthSalesArray) 
 	{
-		const rowTemplate = document.querySelector("#monthly-sales-table-row");
+		const rowTemplate = document.querySelector(".monthly-sales-table-row");
 
 		const templateClone = rowTemplate.content.cloneNode(true);
 

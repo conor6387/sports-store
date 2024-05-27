@@ -68,7 +68,7 @@ h1 {
 	box-sizing: border-box;
 }
 
-#customer-list {
+.customer-list {
 	border-radius: 0.3125rem;
 	background-color: white;
 	padding-top: 1.875rem;
@@ -77,7 +77,7 @@ h1 {
 	text-align: center;
 }
 
-#customer-list-item {
+.customer-list-item {
 	padding: 0.625rem;
 	font-size: large;
 }
