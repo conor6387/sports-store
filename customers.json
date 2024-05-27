@@ -11,13 +11,13 @@
           "equipment": "Basketball",
           "cost": "29.99",
           "month": "10",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Running shoes",
           "cost": "199.99",
           "month": "3",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -32,25 +32,25 @@
           "equipment": "Frisbee",
           "cost": "9.99",
           "month": "10",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Tennis racquet",
           "cost": "149.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Polo shirt",
           "cost": "49.99",
           "month": "1",
-          "year": "2024"
+          "year": 2024
         },
         {
           "equipment": "Water bottle",
           "cost": "14.99",
           "month": "1",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -65,25 +65,25 @@
           "equipment": "Football",
           "cost": "34.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Ping pong table",
           "cost": "249.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Boxing gloves",
           "cost": "129.99",
           "month": "2",
-          "year": "2024"
+          "year": 2024
         },
         {
           "equipment": "Skipping rope",
           "cost": "4.99",
           "month": "4",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -106,13 +106,13 @@
           "equipment": "Running shoes",
           "cost": "199.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Skipping rope",
           "cost": "4.99",
           "month": "2",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -135,7 +135,7 @@
           "equipment": "Basketball",
           "cost": "29.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         }
       ]
     },
@@ -150,19 +150,19 @@
           "equipment": "Polo shirt",
           "cost": "49.99",
           "month": "0",
-          "year": "2024"
+          "year": 2024
         },
         {
           "equipment": "Water bottle",
           "cost": "14.99",
           "month": "1",
-          "year": "2024"
+          "year": 2024
         },
         {
           "equipment": "Boxing gloves",
           "cost": "129.99",
           "month": "4",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -177,13 +177,13 @@
           "equipment": "Football",
           "cost": "34.99",
           "month": "4",
-          "year": "2024"
+          "year": 2024
         },
         {
           "equipment": "Polo shirt",
           "cost": "49.99",
           "month": "4",
-          "year": "2024"
+          "year": 2024
         }
       ]
     },
@@ -198,25 +198,25 @@
           "equipment": "Ping pong table",
           "cost": "249.99",
           "month": "10",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Boxing gloves",
           "cost": "129.99",
           "month": "10",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Frisbee",
           "cost": "9.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         },
         {
           "equipment": "Tennis racquet",
           "cost": "149.99",
           "month": "11",
-          "year": "2023"
+          "year": 2023
         }
       ]
     },

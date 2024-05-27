@@ -16,7 +16,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 
 		const rowColumns = templateClone.querySelectorAll("td");
 
-		if ((new Date(date[0])).getMonth() == currentMonth) 
+		if ((new Date(date[0])).getMonth() === currentMonth) 
 		{
 			for (column of rowColumns) 
 			{
@@ -81,21 +81,14 @@ async function calculateSummaryData()
 		for (const purchase of customer.purchases) 
 		{
 			const dateKey = new Date(purchase.year, purchase.month);
-			
-			if (dateKey in monthSalesDict) 
-			{
-				monthSalesDict[dateKey] = (+monthSalesDict[dateKey] + +purchase.cost).toFixed(2);
-			}
-			else 
-			{
-				monthSalesDict[dateKey] = purchase.cost;
-			}
 
-			if (purchase.year == currentYear) {
+			monthSalesDict[dateKey] = dateKey in monthSalesDict ? (+monthSalesDict[dateKey] + +purchase.cost).toFixed(2) : purchase.cost;
+
+			if (purchase.year === currentYear) {
 				currentYearTotal = (+currentYearTotal + +purchase.cost).toFixed(2);
 			}
 
-			if (purchase.year == currentYear - 1) {
+			if (purchase.year === currentYear - 1) {
 				previousYearTotal = (+previousYearTotal + +purchase.cost).toFixed(2);
 			}
 		}

@@ -31,7 +31,7 @@ function clearCustomerDivs()
 {
 	const customersInfoDiv = document.getElementById("customers-info");
 	while (customersInfoDiv.lastChild) {
-		if (customersInfoDiv.lastChild.nodeName == "TEMPLATE") 
+		if (customersInfoDiv.lastChild.nodeName === "TEMPLATE") 
 		{ 
 			break; 
 		}
@@ -41,33 +41,16 @@ function clearCustomerDivs()
 
 function doesCustomerMatchFilterValues(customer, equipmentFilter, nameFilter, memberFilter) 
 {
-	if (equipmentFilter) 
-	{
-		if (!customer.purchases.some(function (purchase) {
-			return purchase.equipment === equipmentFilter;
-		})) 
-		{
-			return false;
-		}
-	}
+	if (equipmentFilter && !customer.purchases.some(function (purchase) { return purchase.equipment === equipmentFilter; })) return false;
 
 	if (nameFilter) 
 	{
 		const name = (`${customer.firstName} ${customer.lastName}`).toLowerCase();
 
-		if (!name.includes(nameFilter.toLowerCase())) 
-		{
-			return false;
-		}
+		if (!name.includes(nameFilter.toLowerCase())) return false;
 	}
 
-	if (memberFilter) 
-	{
-		if (customer.loyaltyMember != memberFilter) 
-		{
-			return false;
-		}
-	}
+	if (memberFilter && customer.loyaltyMember !== memberFilter) return false;
 
 	return true;
 }
@@ -131,7 +114,7 @@ async function loadCustomerDialogData(Id)
 
 	const customersData = await retrieveCustomerData();
 
-	const customer = customersData.customers.find((customer) => customer.id == Id);
+	const customer = customersData.customers.find((customer) => customer.id === Id);
 
 	const customerElementsList = customerDialogInfoDiv.querySelectorAll(".customer-dialog-text-item");
 
