@@ -7,47 +7,47 @@
   </head>
   <body>
     <script src="customers.js"></script>
-    <div class="pageHeader">
+    <div class="page-header">
       <h1>Sports Store</h1>
-      <a class="navLink" id="activePage" href="customers.html">Customers</a>
-      <a class="navLink" href="summary.html">Summary</a>
+      <a class="nav-link" id="active-page" href="customers.html">Customers</a>
+      <a class="nav-link" href="summary.html">Summary</a>
     </div>
-    <div class="searchFilterDiv">
-      <div class="searchFilter">
-        <select name="equipmentFilter" id="equipmentFilter" onchange="updateFilterSelections()">
+    <div class="search-filter-div">
+      <div class="search-filter">
+        <select name="equipment-filter" id="equipment-filter" onchange="updateFilterSelections()">
           <option value="">--Filter by equipment purchased--</option>
         </select>
       </div>
-      <div class="searchFilter">
-        <input name="customerNameFilter" type="search" id="customerNameFilter" placeholder="Search customer name" onchange="updateFilterSelections()"></input>
+      <div class="search-filter">
+        <input name="customer-name-filter" type="search" id="customer-name-filter" placeholder="Search customer name" onchange="updateFilterSelections()"></input>
       </div>
-      <div class="searchFilter">
-        <input name="memberFilter" type="checkbox" id="memberFilter" onchange="updateFilterSelections()" />
+      <div class="search-filter">
+        <input name="member-filter" type="checkbox" id="member-filter" onchange="updateFilterSelections()" />
         Loyalty member
       </div>
     </div>
-    <div id="customersInfo">
-      <template id="customerListTemplate">
-        <ul id="customerList">
-          <li id="customerListItem"></li>
-          <li id="customerListItem"></li>
-          <li id="customerListItem"></li>
+    <div id="customers-info">
+      <template id="customer-list-template">
+        <ul id="customer-list">
+          <li id="customer-list-item"></li>
+          <li id="customer-list-item"></li>
+          <li id="customer-list-item"></li>
         </ul>
       </template>
     </div>
-    <dialog id="customerDialog">
+    <dialog id="customer-dialog">
       <h3>Customer Details</h3>
-      <div id="customerDialogInfoDiv">
-        <p id="customerDialogTextItem"></p>
-        <p id="customerDialogTextItem"></p>
-        <p id="customerDialogTextItem"></p>
-        <p id="customerDialogTextItem"></p>
-        <p id="customerDialogTextItem"></p>
-        <p id="customerDialogTextItem"></p>
-        <ul id="customerDialogPurchaseList"></ul>
-        <p id="customerDialogTextItem"></p>
+      <div id="customer-dialog-info-div">
+        <p id="customer-dialog-text-item"></p>
+        <p id="customer-dialog-text-item"></p>
+        <p id="customer-dialog-text-item"></p>
+        <p id="customer-dialog-text-item"></p>
+        <p id="customer-dialog-text-item"></p>
+        <p id="customer-dialog-text-item"></p>
+        <ul id="customer-dialog-purchase-list"></ul>
+        <p id="customer-dialog-text-item"></p>
       </div>
-      <button autofocus id="dialogCloseButton">Close</button>
+      <button autofocus id="dialog-close-button">Close</button>
     </dialog>
   </body>
 </html>

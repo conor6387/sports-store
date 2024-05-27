@@ -4,13 +4,13 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 {
 	const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-	const monthlySalesTable = document.getElementById("monthlySalesTableContent");
+	const monthlySalesTable = document.getElementById("monthly-sales-table-content");
 
 	let previousMonth;
 
 	for (const date of monthSalesArray) 
 	{
-		const rowTemplate = document.querySelector("#monthlySalesTableRow");
+		const rowTemplate = document.querySelector("#monthly-sales-table-row");
 
 		const templateClone = rowTemplate.content.cloneNode(true);
 
@@ -20,7 +20,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 		{
 			for (column of rowColumns) 
 			{
-				column.className += "currentMonthHighlight";
+				column.className += "current-month-highlight";
 			}
 		}
 
@@ -50,7 +50,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 
 function populateYearlySalesTable(previousYearTotal, currentYearTotal) 
 {
-	const yearlySalesTable = document.getElementById("yearlySalesTableContent");
+	const yearlySalesTable = document.getElementById("yearly-sales-table-content");
 
 	const yearlyTableColumns = yearlySalesTable.querySelectorAll("td");
 

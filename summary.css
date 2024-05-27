@@ -9,7 +9,7 @@ body {
 	font-family: Arial;
 }
 
-.pageHeader {
+.page-header {
 	width: 100%;
 	text-align: left;
 	padding-top: 1.25rem;
@@ -19,14 +19,14 @@ body {
   	align-items: center;
 }
 
-.navLink {
+.nav-link {
 	color: white;
 	margin-right: 3rem;
 	float: right;
 	text-decoration: none;
 }
 
-#activePage {
+#active-page {
 	font-weight: bold;
 }
 
@@ -41,14 +41,14 @@ h3 {
 	padding-top: 2rem;
 }
 
-.summaryBody {
+.summary-body {
 	width: 100%;
 	padding: 1.25rem;
 	background-color: white;
 	box-sizing: border-box;
 }
 
-.monthlySalesTable, .yearlySalesTable {
+.monthly-sales-table, .yearly-sales-table {
 	border: 0.0625rem solid black;
 	border-collapse: collapse;
 	text-align: center;
@@ -60,6 +60,6 @@ th, td {
 	padding: 0.625rem;
 }
 
-.currentMonthHighlight {
+.current-month-highlight {
 	color: red;
  }

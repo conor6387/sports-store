@@ -9,7 +9,7 @@ body {
 	font-family: Arial;
 }
 
-.pageHeader {
+.page-header {
 	width: 100%;
 	text-align: left;
 	padding-top: 1.25rem;
@@ -19,14 +19,14 @@ body {
   	align-items: center;
 }
 
-.navLink {
+.nav-link {
 	color: white;
 	margin-right: 3rem;
 	float: right;
 	text-decoration: none;
 }
 
-#activePage {
+#active-page {
 	font-weight: bold;
 }
 
@@ -36,25 +36,25 @@ h1 {
 	padding-right: 80rem;
 }
 
-.searchFilterDiv {
+.search-filter-div {
 	width: 100%;
 	background-color: white;
 	padding-top: 1.25rem;
 	padding-bottom: 1.25rem;
 }
 
-.searchFilter {
+.search-filter {
 	width: 33%;
 	background-color: white;
 	display: inline-block;
 	text-align: center;
 }
 
-#equipmentFilter, #customerNameFilter {
+#equipment-filter, #customer-name-filter {
 	padding: 0.3125rem;
 }
 
-#customersInfo {
+#customers-info {
 	width: 100%;
 	padding: 1.25rem;
 	display: grid;
@@ -64,7 +64,7 @@ h1 {
 	box-sizing: border-box;
 }
 
-#customerList {
+#customer-list {
 	border-radius: 0.3125rem;
 	background-color: white;
 	padding-top: 1.875rem;
@@ -73,12 +73,12 @@ h1 {
 	text-align: center;
 }
 
-#customerListItem {
+#customer-list-item {
 	padding: 0.625rem;
 	font-size: large;
 }
 
-#customerDialog {
+#customer-dialog {
 	padding: 1.875rem;
 	text-align: center;
 	position: fixed;
@@ -88,15 +88,15 @@ h1 {
 	border-radius: 0.3125rem;
 }
 
-#customerDialogInfoDiv {
+#customer-dialog-info-div {
 	padding: 1.25rem;
 	text-align: justify;
 }
 
-#customerDialogPurchaseList {
+#customer-dialog-purchase-list {
 	padding-inline-start: 1.25rem;
 }
 
-#dialogCloseButton {
+#dialog-close-button {
 	padding: 0.3125rem;
 }
