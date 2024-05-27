@@ -15,14 +15,19 @@ body {
 	padding-top: 1.25rem;
 	padding-bottom: 1.25rem;
 	background-color: orangered;
-	display: inline-flex;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
   	align-items: center;
+	padding-left: 5rem;
+}
+
+.nav-div {
+	padding-left: 10rem;
 }
 
 .nav-link {
 	color: white;
-	margin-right: 3rem;
-	float: right;
+	padding-left: 3rem;
 	text-decoration: none;
 }
 
@@ -32,21 +37,20 @@ body {
 
 h1 {
 	color: white;
-	padding-left: 5rem;
-	padding-right: 80rem;
 }
 
 .search-filter-div {
 	width: 100%;
 	background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	padding-top: 1.25rem;
 	padding-bottom: 1.25rem;
+	align-items: center;
 }
 
 .search-filter {
-	width: 33%;
 	background-color: white;
-	display: inline-block;
 	text-align: center;
 }
 
