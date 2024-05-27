@@ -10,11 +10,10 @@ body {
 }
 
 .pageHeader {
-	width: 97%;
+	width: 100%;
 	text-align: left;
-	padding-left: 3%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
 	background-color: orangered;
 	display: inline-flex;
   	align-items: center;
@@ -22,7 +21,7 @@ body {
 
 .navLink {
 	color: white;
-	margin-right: 3%;
+	margin-right: 3rem;
 	float: right;
 	text-decoration: none;
 }
@@ -33,14 +32,15 @@ body {
 
 h1 {
 	color: white;
-	padding-right: 65%;
+	padding-left: 5rem;
+	padding-right: 80rem;
 }
 
 .searchFilterDiv {
 	width: 100%;
 	background-color: white;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
 }
 
 .searchFilter {
@@ -51,51 +51,52 @@ h1 {
 }
 
 #equipmentFilter, #customerNameFilter {
-	padding: 5px;
+	padding: 0.3125rem;
 }
 
 #customersInfo {
-	width: 98%;
-	padding: 1%;
+	width: 100%;
+	padding: 1.25rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	column-gap: 1%;
-	row-gap: 20px;
+	column-gap: 1.25rem;
+	row-gap: 1.25rem;
+	box-sizing: border-box;
 }
 
 #customerList {
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 	background-color: white;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 1.875rem;
+	padding-bottom: 1.875rem;
 	list-style: none;
 	text-align: center;
 }
 
 #customerListItem {
-	padding: 10px;
+	padding: 0.625rem;
 	font-size: large;
 }
 
 #customerDialog {
-	padding: 30px;
+	padding: 1.875rem;
 	text-align: center;
 	position: fixed;
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 }
 
 #customerDialogInfoDiv {
-	padding: 20px;
+	padding: 1.25rem;
 	text-align: justify;
 }
 
 #customerDialogPurchaseList {
-	padding-inline-start: 20px;
+	padding-inline-start: 1.25rem;
 }
 
 #dialogCloseButton {
-	padding: 5px;
+	padding: 0.3125rem;
 }

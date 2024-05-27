@@ -10,11 +10,10 @@ body {
 }
 
 .pageHeader {
-	width: 97%;
+	width: 100%;
 	text-align: left;
-	padding-left: 3%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
 	background-color: orangered;
 	display: inline-flex;
   	align-items: center;
@@ -22,7 +21,7 @@ body {
 
 .navLink {
 	color: white;
-	margin-right: 3%;
+	margin-right: 3rem;
 	float: right;
 	text-decoration: none;
 }
@@ -33,32 +32,32 @@ body {
 
 h1 {
 	color: white;
-	padding-right: 65%;
+	padding-left: 5rem;
+	padding-right: 80rem;
 }
 
 h3 {
-	padding-left: 32%;
-	padding-top: 2%;
+	padding-left: 37rem;
+	padding-top: 2rem;
 }
 
 .summaryBody {
-	width: 98%;
-	height: 88vh;
-	margin: auto;
+	width: 100%;
+	padding: 1.25rem;
 	background-color: white;
-	margin-top: 20px;
+	box-sizing: border-box;
 }
 
 .monthlySalesTable, .yearlySalesTable {
-	border: 1px solid black;
+	border: 0.0625rem solid black;
 	border-collapse: collapse;
 	text-align: center;
-	margin: 2% auto;
+	margin: 2rem auto;
 }
 
 th, td {
-	border: 1px solid black;
-	padding: 10px;
+	border: 0.0625rem solid black;
+	padding: 0.625rem;
 }
 
 .currentMonthHighlight {
