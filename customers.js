@@ -127,7 +127,7 @@ async function loadCustomerDialogData(Id)
 
 	const purchaseList = document.getElementById("customer-dialog-purchase-list");
 
-	var totalSpent = 0;
+	let totalSpent = 0;
 
 	for (const purchase of customer.purchases) 
 	{
@@ -147,9 +147,9 @@ async function loadCustomerDialogData(Id)
 
 async function updateFilterSelections()
 {
-	var equipmentValue = document.getElementById("equipment-filter").value;
-	var nameValue = document.getElementById("customer-name-filter").value;
-	var memberValue = document.getElementById("member-filter").checked;
+	let equipmentValue = document.getElementById("equipment-filter").value;
+	let nameValue = document.getElementById("customer-name-filter").value;
+	let memberValue = document.getElementById("member-filter").checked;
 
 	const customersData = await retrieveCustomerData();
 
@@ -157,11 +157,31 @@ async function updateFilterSelections()
 	createCustomerDivs(customersData, equipmentValue, nameValue, memberValue);
 }
 
+async function addFilterEventListeners()
+{
+	const equipmentFilter = document.getElementById("equipment-filter");
+	const nameFilter = document.getElementById("customer-name-filter");
+	const memberFilter = document.getElementById("member-filter");
+
+	equipmentFilter.addEventListener("change", () => {
+		updateFilterSelections();
+	});
+
+	nameFilter.addEventListener("change", () => {
+		updateFilterSelections();
+	});
+
+	memberFilter.addEventListener("change", () => {
+		updateFilterSelections();
+	});
+}
+
 async function loadAllCustomers() 
 {
 	const customersData = await retrieveCustomerData();
 	populateEquipmentList(customersData);
 	createCustomerDivs(customersData);
+	addFilterEventListeners();
 }
 
 async function retrieveCustomerData()

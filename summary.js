@@ -20,7 +20,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 		{
 			for (column of rowColumns) 
 			{
-				column.className += "current-month-highlight";
+				column.classList.add("current-month-highlight");
 			}
 		}
 
@@ -69,9 +69,9 @@ async function calculateSummaryData()
 {
 	const customersData = await retrieveCustomerData();
 
-	var monthSalesDict = {};
-	var previousYearTotal = 0;
-	var currentYearTotal = 0;
+	let monthSalesDict = {};
+	let previousYearTotal = 0;
+	let currentYearTotal = 0;
 
 	const currentYear = new Date().getFullYear();
 	const currentMonth = new Date().getMonth();
@@ -94,7 +94,7 @@ async function calculateSummaryData()
 		}
 	}
 
-	var monthSalesArray = Object.keys(monthSalesDict).map(function(key) {
+	let monthSalesArray = Object.keys(monthSalesDict).map(function(key) {
 		return [key, monthSalesDict[key]];
 	});
 	
