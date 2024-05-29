@@ -159,20 +159,12 @@ async function updateFilterSelections()
 
 async function addFilterEventListeners()
 {
-	const equipmentFilter = document.getElementById("equipment-filter");
-	const nameFilter = document.getElementById("customer-name-filter");
-	const memberFilter = document.getElementById("member-filter");
+	["equipment-filter", "customer-name-filter", "member-filter"].forEach(id => {
+		const filterElement = document.getElementById(id);
 
-	equipmentFilter.addEventListener("change", () => {
-		updateFilterSelections();
-	});
-
-	nameFilter.addEventListener("change", () => {
-		updateFilterSelections();
-	});
-
-	memberFilter.addEventListener("change", () => {
-		updateFilterSelections();
+		filterElement.addEventListener("change", () => {
+			updateFilterSelections();
+		});
 	});
 }
 
