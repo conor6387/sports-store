@@ -27,7 +27,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 		rowColumns[0].textContent = `${month[(new Date(date[0])).getMonth()]} ${(new Date(date[0])).getFullYear()}`;
 		rowColumns[1].textContent = `${date[1]}`;
 
-		let monthlyChange = (+date[1] - +previousMonth).toFixed(2);
+		let monthlyChange = (date[1] - previousMonth).toFixed(2);
 		if (isNaN(monthlyChange)) 
 		{
 			monthlyChange = "-";
@@ -35,7 +35,7 @@ function populateMonthlySalesTable(monthSalesArray, currentMonth)
 		const positiveChangeChar = monthlyChange >= 0 ? "+" : ""; 
 		rowColumns[2].textContent = `${positiveChangeChar}${monthlyChange}`;
 
-		let monthlyPercentChange = ((+date[1] / +previousMonth - 1)*100).toFixed(2);
+		let monthlyPercentChange = ((date[1] / previousMonth - 1)*100).toFixed(2);
 		if (isNaN(monthlyPercentChange)) 
 		{
 			monthlyPercentChange = "-";
@@ -80,16 +80,21 @@ async function calculateSummaryData()
 	{
 		for (const purchase of customer.purchases) 
 		{
-			const dateKey = new Date(purchase.year, purchase.month);
+			const dateKey = new Date(purchase.timestamp);
+			const purchaseYear = dateKey.getFullYear();
 
 			monthSalesDict[dateKey] = dateKey in monthSalesDict ? (+monthSalesDict[dateKey] + +purchase.cost).toFixed(2) : purchase.cost;
 
-			if (purchase.year === currentYear) {
-				currentYearTotal = (+currentYearTotal + +purchase.cost).toFixed(2);
+			if (purchaseYear === currentYear) {
+				const currTotal = +currentYearTotal;
+				const cost = +purchase.cost;
+				currentYearTotal = (currTotal + cost).toFixed(2);
 			}
 
-			if (purchase.year === currentYear - 1) {
-				previousYearTotal = (+previousYearTotal + +purchase.cost).toFixed(2);
+			if (purchaseYear === currentYear - 1) {
+				const prevTotal = +previousYearTotal;
+				const cost = +purchase.cost;
+				previousYearTotal = (prevTotal + cost).toFixed(2);
 			}
 		}
 	}
